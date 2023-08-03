@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <main>
+
+        <div class="game-start" >
+            <h1 class="playGame-btn" id="playGame">Play Game</h1>
+        </div>
+
+        <div class="game-menu">
+            <header>
+                <h1>TIC-TAC-TOE</h1>
+            </header>
+            <div class="game-selection">
+                <div class="character-container">
+                    <div class="character-info">
+                        <div class="character-frame">
+                            <img src="assets/img/player.gif" alt=""> 
+                        </div>
+                        <input type="text" placeholder="Player 1" class="player1" id="player1" autocomplete="off">
+                    </div>
+                    <button class="start-btn">Start</button>
+                    <div class="character-info">
+                        <div class="character-frame">
+                            <img src="assets/img/player.gif" alt="" class="player2-gif">
+                        </div>
+                        <input type="text" placeholder="Player 2" class="player2" id="player2" autocomplete="off">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-section">
+            <header>
+                <span>First to score 5 wins!</span>
+            </header>
+
+            <div class="player-turn">
+                <span class="player-turn-span" id="player-turn-label">Player 1</span>
+                <span>Turn</span>
+            </div>
+
+            <div class="game-container">
+                <div class="gameboard">
+            
+                </div>
+                <div class="score-container">
+                    <div class="player-score">
+                        <span class="player1-score-text">Player 1 Score:</span>
+                        <span class="player1-score" id="player1-score">0</span>
+                    </div>
+                    <div class="player-score">
+                        <span class="player2-score-text">Player 2 Score:</span>
+                        <span class="player2-score" id="player2-score">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="overlay"></div>
+        <div class="modal" id="modal">
+            <div class="congrats-section">
+                <h3>Congratulations !</h3>
+                <h2 class="modal-player-win">Player 1 Win !</h2>
+            </div>
+            <div class="modal-btn">
+                <button class="quit-btn" id="quit-btn">Quit</button>
+                <button class="restart-btn" id="restart-btn">Restart</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

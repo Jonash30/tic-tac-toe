@@ -1,0 +1,302 @@
+:root{
+    --primary-color: #fbbf24;
+    --secondary-color: #1a2b33;
+    --tertiary-color: #c4c4c4;
+}
+
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.game-start{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--primary-color);
+    transition: opacity 0.5s, display 0.5s;
+}
+.game-start h1{
+    font-size: 3rem;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+    color: var(--secondary-color);
+    transition: transform 0.5s ease;
+}
+.game-start h1:hover{
+    transform: scale(1.1);
+}
+.game-menu{
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--secondary-color);
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s, display 0.5s;
+}
+.game-menu header{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+.game-menu header h1{
+    color: var(--primary-color);
+    font-family: 'Press Start 2P', cursive;
+}
+.game-selection{
+    padding-top: 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.character-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.character-container .start-btn{
+    font-size: 2rem;
+    background-color: transparent;
+    border: none;
+    font-family: 'Press Start 2P', cursive;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+.character-container .start-btn:focus{
+    transform: scale(.8);
+}
+.character-info{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.character-frame{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+.character-frame img{
+    width: 100%;
+    height: 100%;
+}
+.ai-gif{
+    display: none;
+}
+.player1, .player2{
+    text-align: center;
+    font-size: 1rem;
+    color: var(--tertiary-color);
+    font-family: 'Press Start 2P', cursive;
+    background-color: transparent;
+    border: 1px solid var(--tertiary-color);
+    padding: .5rem;
+    border-radius: 5px;
+    outline: none;
+}
+.player1::placeholder, .player2::placeholder{
+    color: var(--tertiary-color);
+}
+.game-section{
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--secondary-color);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s, display 0.5s;
+}
+.game-section header{
+    width: 100%;
+    padding: 1.5rem 3rem;
+    
+}
+.game-section header span{
+    font-size: 1.5rem;
+    color: var(--tertiary-color);
+    font-weight: 600;
+}
+.quit-btn-container{
+    display: flex;
+    gap: .3rem;
+    align-items: start;
+}
+.quit-btn span{
+    font-size: 1.5rem;
+    color: var(--tertiary-color);
+}
+.player-turn{
+    padding: 1.5rem 1rem;
+    background-color: #1B3643;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .3);
+}
+.player-turn span{
+    color: var(--tertiary-color);
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+.player-turn .player-turn-span{
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+.game-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 2rem 2rem;
+}
+.gameboard{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 1rem;
+}
+.board{
+    height: 100px;
+    width: 100px;
+    background-color: var(--tertiary-color);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    color: var(--secondary-color);
+    font-weight: 800;
+}
+.score-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+.player-score{
+    width: 175px;
+    background-color: var(--primary-color);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+.player-score span{
+    color: var(--secondary-color);
+}
+.player1-score, .player2-score{
+    font-weight: 700;
+    font-size: 2rem;
+}
+.page-display1{
+    opacity: 1;
+    display: block;
+}
+.page-display2{
+    opacity: 1;
+    display: flex;
+}
+.board.winning {
+    animation: floatingAnimation 1s infinite alternate;
+    background-color: var(--primary-color);
+}
+.modal{
+    width: 500px;
+    padding: 1rem 0;
+    background-color: #1B3643;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
+    position: fixed;
+    top: -100%;
+    left: 45%;
+    border-radius: 15px;
+    transform: translate(-35%, -30%);
+    margin-top: -50px;
+    transition: top 0ms ease-in-out 300ms, opacity 300ms ease-in-out, margin-top 300ms ease-in-out;
+    z-index: 999;
+}
+.overlay{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    display: none;
+}
+body.active-modal .overlay{
+    opacity: 1;
+    transition: opacity 300ms ease-in-out;
+    display: block;
+}
+body.active-modal .modal{
+    top: 40%;
+    opacity: 1;
+    margin-top: 0px;
+    transition: top 0ms ease-in-out 0ms, opacity 300ms ease-in-out, margin-top 300ms ease-in-out;
+}
+.congrats-section{
+    padding-top: 20px;
+    color: var(--tertiary-color);
+    text-align: center;
+}
+.congrats-section h3{
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 5px;
+    padding-bottom: 20px;
+    font-size: .9rem;
+}
+.congrats-section h2{
+    font-size: 1.5rem;
+}
+.modal-btn{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.modal-btn button{
+    width: 140px;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.quit-btn{
+    background-color: var(--tertiary-color);
+}
+.restart-btn{
+    background-color: var(--primary-color);
+}
+
+
+@keyframes floatingAnimation {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
