@@ -1,3 +1,5 @@
-# TicTacToe Game
+# Tic-Tac-Toe Game
 
-A tictactoe game built with HTML, CSS, JavaScript.
+A tic-tac-toe game built with HTML, CSS, JavaScript.
+
+Live preview here: https://jonash30.github.io/tic-tac-toe/
